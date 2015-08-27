@@ -58,6 +58,7 @@ class Flow {
                 var process = new sys.io.Process('uname',['-m']);
                 var value = process.stdout.readAll().toString();
 
+		if (value.indexOf('armv7') != -1) return 'v7';
                 (value.indexOf('64') != -1) ? return '64' : '';
 
             case 'windows' :
